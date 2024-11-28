@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <p class="detail-category">
+        <a href="{% url 'home' %}">Главная</a> 
+        {% for category in categories %}
+            <a href="{% url 'home' %}?category={{ category.id }}">/{{ category.name }}</a>
+        {% endfor %}
+    </p>
+<div class="detail-product-container">
+    <div class="detail-image">
+        <img src="{{ dish.image.url }}" alt="{{ dish.name }}">
+    </div>
+    <div class="detail-info">
+        <h2>{{ dish.name }}</h2>
+        <p class="detail-price"><strong>Цена:</strong> {{ dish.price }} тг.</p>
+        <p class='weight'>Вес: <span>{{ dish.weight }} гр</span></p>
+        <p class='wehave'>Товар доступен: <span>{{ dish.stock }} шт.</span></p>
+        <button class="add-to-cart-btn2" data-dish-id="{{ dish.id }}">В корзину</button>
+        <p class='description'>{{ dish.description }}</p>
+    </div>
+</div>
+{% endblock %}

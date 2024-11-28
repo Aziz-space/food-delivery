@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    height: 180px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.logo {
+    width: 99px;
+    height: 42px;
+    position: absolute;
+    top: 20px;
+    left: 130px;
+}
+
+
+.phone {
+    width: 132px;
+    height: 22px;
+    position: absolute;
+    top: 45px;
+    left: 279px;
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0;
+    text-align: left;
+}
+
+
+.free_call {
+    width: 131px;
+    height: 17px;
+    position: absolute;
+    top: 24px;
+    left: 280px;
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0;
+    text-align: left;
+    color: rgb(167, 174, 210);
+}
+
+
+.search-bar {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input {
+    width: 380px;
+    height: 45px;
+    position: absolute;
+    top: 23px;
+    left: 530px;
+    border-radius: 31px;
+    background-color: rgb(244, 245, 250);
+    border: none;
+    padding: 0 15px;
+}
+
+.search-bar .bi-search {
+    color: rgb(167, 174, 210);
+    position: absolute;
+    top: 35.5px;
+    left: 632px;
+    z-index: 1000;
+    width: 16px;
+    height: 16px;
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+.search-bar input::placeholder {
+    color: rgb(167, 174, 210);
+    width: 134px;
+    height: 16px;
+    position: absolute;
+    top: 14.5px;
+    left: 123px;
+}
+
+
+
+.address {
+    width: auto;
+    height: 32px; 
+    position: absolute;
+    top: 30px;
+    left: 1103px;
+    text-align: right; 
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%; 
+    letter-spacing: 0;
+    color: rgb(70, 197, 120);
+    margin: 0; 
+}
+
+.address .city {
+    width: 69px;
+    height: 12px;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: rgb(167, 174, 210);
+    margin: 0;
+}
+
+.login-btn {
+    width: 86px;
+    height: 34px;
+    position: absolute;
+    top: 28px;
+    left: 1224px;
+    border-radius: 21px;
+    border: 1px solid rgb(192, 194, 203);
+    background-color: transparent;
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    padding-left: 19px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: rgb(192, 194, 203);
+    color: white;
+}
+
+
+.nav-underline {
+    position: absolute;
+    top: 91px;
+    left: 130px;
+    width: 1176px;
+    height: 1px;
+    background-color: rgb(240, 240, 240);
+    margin: 0 auto;
+}
+
+.categories-container {
+   z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 943px;
+    height: auto;
+    position: absolute;
+    top: 132px;
+    left: 130px;
+    margin: 0;
+    padding: 10px 20px;
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 17px;
+    color: rgb(0, 0, 0);
+}
+
+.categories-container .subcategories {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.categories-container .subcategories li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.categories-container .subcategories li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    cursor: pointer;
+}
+
+
+.categories-container .categories-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.categories-container .categories-dropdown span {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgb(0, 0, 0);
+}
+
+.categories-container .categories-dropdown i {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgb(0, 0, 0);
+}
+
+
+.arrow {
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+}
+
+
+.cart-btn {
+    width: 160px;
+    height: 48px;
+    position: absolute;
+    top: 112px;
+    left: 1150px;
+    border-radius: 10px;
+    background-color: rgb(70, 197, 120);
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer !important;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
+    z-index: 1000;
+}
+
+.cart-btn:hover {
+    background-color: rgb(36, 138, 76);
+}
+
+.cart-btn p {
+    top: 5px;
+    left: 44px;
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    position: absolute;
+    width: 65px;
+    height: 19px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.cart-btn .gram {
+    position: absolute;
+    top: 26px;
+    left: 44px;
+    width: 43px;
+    height: 14px;
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: rgba(255, 255, 255, 0.65);
+
+    
+}
+
+
+.cart-icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 12px;
+    left: 10px;
+}
+
+
+
+.count {
+    position: absolute;
+    top: 7px;
+    left: 119px;
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    border-radius: 10px;
+    background-color: rgb(116, 214, 154);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.count p {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 18px;
+    height: 19px;
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    margin: 0;
+}

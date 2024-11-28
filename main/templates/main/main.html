@@ -1,0 +1,93 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="main-content-wrapper">
+    <div class="ball1"></div>
+    <div class="main-container">
+        <div class="ball1"><img src="{% static 'main/img/Arrow button.png' %}" alt=""></div>
+        <div class="main-content">
+            <h1 class="main-title">Всегда свежие молочные продукты</h1>
+            <p class="main-description">Только качественные товары, за которыми мы всегда следим</p>
+            <a href="#" class="main-button">Подробнее</a>
+        </div>
+        <div class="main-image">
+            <img src="{% static 'main/img/Rectangle 3.png' %}" alt="Главное изображение">
+        </div>
+        <div class="ball2"><img src="{% static 'main/img/Arrow button (1).png' %}" alt=""></div>
+    </div>
+
+    <div class="small-container small-container-1">
+        <div class="card-image1">
+            <img src="{% static 'main/img/artage-io-thumb-16198c8e109d22e6d72d411c890c655a 1.png' %}" alt="Главное изображение">
+        </div>
+        <div>
+            <h3 class="card-title">Горячие блюда</h3>
+            <p class="card-description">Вкуснейшие блюда из 4 ресторанов</p>
+        </div>
+    </div>
+
+    <div class="small-container small-container-2">
+        <div class="card-image2">
+            <img src="{% static 'main/img/m_m_PNG33 1.png' %}" alt="Главное изображение">
+        </div>
+        <div>
+            <h3 class="card-title">Новинки</h3>
+            <p class="card-description">Новые позиции</p>
+        </div>
+    </div>
+
+    <div class="small-container small-container-3">
+        <div class="card-image3">
+            <img src="{% static 'main/img/disc 1.png' %}" alt="Главное изображение">
+        </div>
+        <div>
+            <h3 class="card-title">Акции</h3>
+            <p class="card-description">Лучшие цены</p>
+        </div>
+    </div>
+
+    <div class="small-container small-container-4">
+        <div class="card-image4">
+            <img src="{% static 'main/img/image 5.png' %}" alt="Главное изображение">
+        </div>
+        <div>
+            <h3 class="card-title">Комплекты</h3>
+            <p class="card-description">Все в одном</p>
+        </div>
+    </div>
+
+    <div class="product-container">
+    {% for dish in dishes %}
+    <div class="product-card">
+        <a href="{% url 'dish_detail' dish.id %}" class="dish-link">
+            {% if dish.image %}
+            <img src="{{ dish.image.url }}" alt="{{ dish.name }}">
+            {% else %}
+            <p>Изображение недоступно</p>
+            {% endif %}
+            <h3>{{ dish.name }}</h3>
+        </a>
+        <p class='wehave'>В наличии: {{ dish.stock }} шт.</p>
+        <p class='weight'>Вес: {{ dish.weight }} гр</p>
+        <p class='price'>{{ dish.price }} тг.</p>
+
+        <div class="cart-quantity-container">
+            <div class="quantity-container">
+                <button class="quantity-btn minus" data-dish-id="{{ dish.id }}">-</button>
+                <span class="quantity-display" id="quantity-{{ dish.id }}">0</span>
+                <button class="quantity-btn plus" data-dish-id="{{ dish.id }}">+</button>
+            </div>
+            <button class="add-to-cart-btn" data-dish-id="{{ dish.id }}">В корзину</button>
+        </div>
+    </div>
+    {% empty %}
+    <p>Нет доступных блюд.</p>
+    {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

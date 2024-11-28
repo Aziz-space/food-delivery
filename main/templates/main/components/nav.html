@@ -1,0 +1,88 @@
+{% load static %}
+
+<nav class="navbar">
+    <div class="logo">
+        <img src="{% static 'main/img/image 1.png' %}" alt="Логотип">
+    </div>
+    <p class="free_call">Бесплатный звонок</p>
+    <div class="phone">8 800 080 5011</div>
+    <div class="search-bar">
+        <form action="#" method="get">
+            <div class="search-input">
+                <i class="bi bi-search"></i>
+                <input 
+                    type="text" 
+                    placeholder="Поиск товаров" 
+                    name="query" 
+                    id="searchInput" 
+                    value="{{ query|default:'' }}"  
+                >
+            </div>
+        </form>
+    </div>
+    <div class="address">
+        <p>ЕЦ-166/4</p>
+        <p class="city">Нур-Султан</p>
+    </div>
+    <a href="{% url 'register-form' %}" class="login-btn">Войти</a>
+
+</nav>
+
+<div class="nav-underline"></div>
+
+<nav class="categories-container">
+    <ul class="subcategories">
+        {% for category in categories %}
+        <li>
+            <a href="#category{{ category.id }}">{{ category.name }}</a>
+            <i class="bi bi-chevron-down"></i>
+        </li>
+        {% empty %}
+        <li>Категории не найдены</li>
+        {% endfor %}
+    </ul>
+    <div class="categories-dropdown">
+        <span>Еще</span>
+        <i class="bi bi-chevron-down"></i>
+    </div>
+</nav>
+
+<button class="cart-btn">
+    <img src="{% static 'main/img/Icons _ cart.png' %}" alt="Cart Icon" class="cart-icon">
+    <p>Корзина</p>
+    <p class="gram">2 400 г.</p>
+    <div class="count">
+        <p>12</p>
+    </div>
+</button>
+
+<!-- Модальное окно -->
+<div class="modal">
+    <div class="left-column">
+        <ul class="category-list">
+            <li class="category-item">Разное</li>
+            <li class="category-item">Сигареты</li>
+            <li class="category-item">
+                <a href="#" class="category-link">
+                    <span>Канцтовары</span>
+                    <span class="arrow">›</span>
+                </a>
+            </li>
+            <li class="category-item">
+                <a href="#" class="category-link">
+                    <span>Одежда</span>
+                    <span class="arrow">›</span>
+                </a>
+            </li>
+            <li class="category-item">Комплект</li>
+        </ul>
+        <button class="show-all">Все категории</button>
+    </div>
+    <div class="right-column">
+        <ul class="category-list">
+            <li class="category-item">Карты Тарлан</li>
+            <li class="category-item green-text">Газеты, Журналы</li>
+            <li class="category-item">Средства защиты от комаров</li>
+        </ul>
+    </div>
+</div>

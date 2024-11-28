@@ -1,0 +1,60 @@
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="registration-container">
+    <a href="/" class="back-link">
+        Назад на главную
+        <div class="back-btn"><img src="{% static 'main/img/Color.png' %}" alt=""></div>
+    </a>
+    <div class="registration-box">
+        <!-- Logo -->
+        <div class="logo-container">
+            <img class="logo" src="{% static 'main/img/image 1.png' %}" alt="Convex">
+        </div>
+        
+        <!-- Header -->
+        <div class="header">
+            <h2 class="title">Вход</h2>
+        </div>
+
+        {% if messages %}
+        <div class="message-box">
+            {% for message in messages %}
+                <div class="message">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Registration Form -->
+        <form method="POST" action="{% url 'login-form' %}" class="registration-form">
+            {% csrf_token %}
+            
+            
+            <div class="form-group">
+                <label for="email">Логин</label>
+                <input type="email" name="email" id="email" required 
+                    value="{{ request.POST.email|default:'' }}"
+                    placeholder="Введите вашу почту">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Пароль</label>
+                <input type="password" name="password" id="password" required
+                    placeholder="Введите пароль">
+            </div>
+
+            <div class="login-btns">
+            <button type="submit" class="submit-button">Войти</button>
+            <p>или</p>
+            <a href="{% url 'register-form' %}" class="submit-button-reg">Зарегистрироваться</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
